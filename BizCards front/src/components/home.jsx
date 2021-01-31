@@ -46,12 +46,18 @@ class Home extends Component {
     const req = await cardService.getAllCards();
     this.allcards = req.data;
     const cards = this.allcards;
-    const { data: favorites } = await userService.getFavorites();
-    const favIDs = favorites.map((fav) => fav._id);
-    if (cards.length > 0 && favIDs.length > 0)
+    let favorites;
+    let isLogged = await userService.getCurrentUser(); 
+
+    if(isLogged){
+      const { data } = await userService.getFavorites();
+      favorites = data;
+      const favIDs = favorites.map((fav) => fav._id)
       return this.setState({ cards, favIDs });
-    if (cards.length > 0) this.setState({ cards });
-    if (favIDs.length > 0) this.setState({ favIDs });
+    }else{
+      return this.setState({ cards })
+    }
+    
   }
   checkFaved(cardID){
     const favIDs = [...this.state.favIDs];

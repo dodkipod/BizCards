@@ -7,9 +7,7 @@ const tokenKey = "token";
 export function deleteFavorite(cardID) {
   return http.delete(`${apiUrl}/users/favorites`,{ data:{cardID} });
 }
-// export function deleteFavorite(cardId) {
-//   return http.delete(`${apiUrl}/favorites/${cardId}`);
-// }
+
 
 export function getFavorites() {
   return http.get(`${apiUrl}/users/favorites`);

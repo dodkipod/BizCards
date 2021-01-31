@@ -7,7 +7,7 @@ const app = express();
 const http = require('http').Server(app);
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/my_rest_api', {
+mongoose.connect('mongodb://localhost/BizCards', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex:true,
