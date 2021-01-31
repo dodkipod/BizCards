@@ -1,2 +1,2 @@
-# BizCards
+# Mongodb, Node.js, React, Bootstrap
  
