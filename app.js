@@ -22,5 +22,5 @@ app.use('/api/users', users);
 app.use('/api/auth', auth);
 app.use('/api/cards', cards); 
 
-const port = 8181;
+const port = process.env.PORT || 8181;
 http.listen(port, () => console.log(`Listening on port ${port}`));
