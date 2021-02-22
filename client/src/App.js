@@ -29,6 +29,10 @@ class App extends Component {
        })
   }
 
+  componentWillMount() {
+    this.callAPI();
+  }
+
   componentDidMount() {
     const user = userService.getCurrentUser();
     this.setState({ user });
