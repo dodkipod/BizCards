@@ -20,12 +20,13 @@ import ProtectedRoute from "./components/common/protectedRoute";
 class App extends Component {
   state = {};
 
-  callapi(){
-    fetch("/api")
-    .then(res=>res.json())
-    .then(res=>{
-      console.log(JSON.stringify(res))
-    })
+  callAPI() {
+   // Calling Express API Here
+   fetch("/api")
+       .then(res => res.json())
+       .then(res => {
+         this.setState({response: res});
+       })
   }
 
   componentDidMount() {
