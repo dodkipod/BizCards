@@ -8,7 +8,7 @@ const path = require('path');
 const http = require('http').Server(app);
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://adam:bFa2SGm6hEub4J4rQPdG@cluster0.gda8h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://adam:bFa2SGm6hEub4J4rQPdG@cluster0.gda8h.mongodb.net/Cluster0?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex:true,
