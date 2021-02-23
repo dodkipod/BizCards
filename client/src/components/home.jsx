@@ -109,7 +109,7 @@ class Home extends Component {
 
   render() {
     const { cards } = this.state;
-
+    console.log(cards);
     return (
       <div className="container">
         <PageHeader titleText="Home Page" />
@@ -133,6 +133,7 @@ class Home extends Component {
               </div>
             }
             {cards.length > 0 &&
+              
               cards.map((card) => (
                 <Card
                  key={card._id}
