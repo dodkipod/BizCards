@@ -20,9 +20,9 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use('/users', users);
-app.use('/auth', auth);
-app.use('/cards', cards); 
+app.use('/api/users', users);
+app.use('/api/auth', auth);
+app.use('/api/cards', cards); 
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));

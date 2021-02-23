@@ -23,7 +23,7 @@ class SignUp extends Form {
 
   doSubmit = async () => {
     const data = { ...this.state.data };
-    const apiUrl = process.env.PORT;
+    const apiUrl = process.env.PORT+"/api";
     data.biz = false;
     try {
       await http.post(`${apiUrl}/users`, data);

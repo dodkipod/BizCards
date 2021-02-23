@@ -21,7 +21,7 @@ class BizSignUp extends Form {
   };
 
   doSubmit = async () => {
-    const apiUrl = process.env.PORT;
+    const apiUrl = process.env.PORT+"/api";
     const data = { ...this.state.data };
     data.biz = true;
 
