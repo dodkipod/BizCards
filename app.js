@@ -21,18 +21,19 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use('/api/users', users);
-app.use('/api/auth', auth);
-app.use('/api/cards', cards); 
-app.use('/', test); 
+app.use('/users', users);
+app.use('/auth', auth);
+app.use('/cards', cards); 
+// app.use('/', test); 
 
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static(path.join(__dirname, 'client/build')));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
 
-//   app.get('*', function(req, res) {
-//     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-//   });
-// }
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
+
 
 const port = process.env.PORT || 5000;
 // const port = process.env.PORT || 8181;

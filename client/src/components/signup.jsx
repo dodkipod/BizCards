@@ -5,7 +5,7 @@ import {toast} from "react-toastify";
 import PageHeader from "./common/pageHeader";
 import Form from "./common/form";
 import http from "../services/httpService";
-// import { apiUrl } from "../config.json";
+import { apiUrl } from "../config.json";
 import userService from "../services/userService";
 import {Redirect,Link} from "react-router-dom";
 
@@ -23,7 +23,7 @@ class SignUp extends Form {
 
   doSubmit = async () => {
     const data = { ...this.state.data };
-    const apiUrl = process.env.PORT+"/api";
+    // const apiUrl = process.env.PORT;
     data.biz = false;
     try {
       await http.post(`${apiUrl}/users`, data);
