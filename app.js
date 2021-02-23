@@ -32,6 +32,6 @@ app.use('/api/cards', cards);
   });
 
 
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 // const port = process.env.PORT || 8181;
 http.listen(port, () => console.log(`Listening on port ${port}`));
