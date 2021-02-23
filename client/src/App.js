@@ -20,18 +20,18 @@ import ProtectedRoute from "./components/common/protectedRoute";
 class App extends Component {
   state = {};
 
-  callAPI() {
-   // Calling Express API Here
-   fetch("/api")
-       .then(res => res.json())
-       .then(res => {
-         this.setState({response: res});
-       })
-  }
+  // callAPI() {
+  //  // Calling Express API Here
+  //  fetch("/api")
+  //      .then(res => res.json())
+  //      .then(res => {
+  //        this.setState({response: res});
+  //      })
+  // }
 
-  componentWillMount() {
-    this.callAPI();
-  }
+  // componentWillMount() {
+  //   this.callAPI();
+  // }
 
   componentDidMount() {
     const user = userService.getCurrentUser();
