@@ -132,7 +132,7 @@ class Home extends Component {
                 <p>No cards yet</p>
               </div>
             }
-            {cards.length > 0 &&
+            {/* {cards.length > 0 &&
               
               cards.map((card) => (
                 <Card
@@ -142,7 +142,7 @@ class Home extends Component {
                   parent={"home"}
                   clickFav={this.clickFav}
                 />
-              ))}
+              ))} */}
           </div>
         </div>
       
