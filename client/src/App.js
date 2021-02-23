@@ -19,7 +19,7 @@ import ProtectedRoute from "./components/common/protectedRoute";
 
 class App extends Component {
   state = {};
-
+ 
   componentDidMount() {
     const user = userService.getCurrentUser();
     this.setState({ user });
