@@ -9,7 +9,7 @@ const http = require('http').Server(app);
 const mongoose = require('mongoose');
 
 // ** MIDDLEWARE ** //
-const whitelist = ['http://localhost:3000','http://localhost:5000','http://localhost:8080','http://localhost:8181','https://adamsbizcards.herokuapp.com'];
+const whitelist = ['https://localhost:3000','https://localhost:5000','https://localhost:8080','https://localhost:8181','https://adamsbizcards.herokuapp.com'];
 const corsOptions = {
   origin: function (origin, callback) {
     console.log("** Origin of request " + origin)
