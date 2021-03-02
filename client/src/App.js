@@ -31,6 +31,7 @@ class App extends Component {
         console.log("res: ", res)
         this.setState({response: res});
       })
+      .catch(err=>console.log(err))
   }
 
   componentDidMount() {
