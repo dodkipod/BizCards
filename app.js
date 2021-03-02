@@ -21,9 +21,9 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use('/users', users);
-app.use('/auth', auth);
-app.use('/cards', cards); 
+app.use('/undefined/users', users);
+app.use('/undefined/auth', auth);
+app.use('/undefined/cards', cards); 
 // app.use('/', test); 
 
 if (process.env.NODE_ENV === 'production') {
