@@ -45,7 +45,9 @@ class Home extends Component {
   async componentDidMount() {
     const req = await cardService.getAllCards();
     this.allcards = req.data;
+    console.log("componentdidmount allcards: ", this.allcards);
     const cards = this.allcards;
+    console.log("componentdidmount cards: ", cards);
     let favorites;
     let isLogged = await userService.getCurrentUser(); 
 
@@ -109,7 +111,7 @@ class Home extends Component {
 
   render() {
     const { cards } = this.state;
-    console.log(cards);
+    console.log("cards in render(): ",cards);
     return (
       <div className="container">
         <PageHeader titleText="Home Page" />
