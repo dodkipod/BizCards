@@ -1,8 +1,7 @@
 import http from "./httpService";
-// import { apiUrl } from "../config.json";
 import jwtDecode from "jwt-decode";
 import apiUrl from "../apiurl";
-// const apiUrl = process.env.PORT;
+
 const tokenKey = "token";
 
 export function deleteFavorite(cardID) {

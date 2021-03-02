@@ -1,7 +1,6 @@
 import http from "./httpService";
-// import { apiUrl } from "../config.json";
 import apiUrl from "../apiurl";
-// const apiUrl = process.env.PORT;
+
 
 export function getAllCards() {
   return http.get(`${apiUrl}/cards/`);

@@ -25,7 +25,7 @@ app.use('/undefined/users', users);
 app.use('/undefined/auth', auth);
 app.use('/undefined/cards', cards); 
 app.use('/my-cards/edit/undefined/cards', cards); 
-// app.use('/', test); 
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
@@ -37,5 +37,5 @@ if (process.env.NODE_ENV === 'production') {
 
 
 const port = process.env.PORT || 5000;
-// const port = process.env.PORT || 8181;
+
 http.listen(port, () => console.log(`Listening on port ${port}`));

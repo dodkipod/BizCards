@@ -16,26 +16,15 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import userService from "./services/userService";
 import ProtectedRoute from "./components/common/protectedRoute";
-import apiUrl from "../src/apiurl";
+
 
 class App extends Component {
   state = {
-    response:{}
+    
   };
- 
-  // callAPI() {
-  
-  //   fetch(apiUrl)
-  //     // .then(res => res.json())
-  //     .then(res => {
-  //       console.log("res: ", res)
-  //       this.setState({response: res});
-  //     })
-  //     .catch(err=>console.log(err))
-  // }
 
   componentDidMount() {
-    // this.callAPI();
+  
     const user = userService.getCurrentUser();
     this.setState({ user });
   }
@@ -44,9 +33,7 @@ class App extends Component {
     const { user } = this.state;
 
     return (
-      // <React.Fragment>
-      //   {apiUrl!== "http://localhost:5000" && this.state.response}
-      //   {apiUrl=== "http://localhost:5000" && 
+ 
           <React.Fragment>
             <header>
               <ToastContainer />
@@ -79,7 +66,7 @@ class App extends Component {
             <footer>
               <Footer />
             </footer>
-          {/* </React.Fragment>} */}
+     
       </React.Fragment>
     );
   }

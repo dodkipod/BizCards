@@ -4,7 +4,7 @@ import Joi from "joi-browser";
 import PageHeader from "./common/pageHeader";
 import Form from "./common/form";
 import http from "../services/httpService";
-// import { apiUrl } from "../config.json";
+
 import apiUrl from "../apiurl";
 import userService from "../services/userService";
 import {Redirect} from "react-router-dom";
@@ -22,7 +22,7 @@ class BizSignUp extends Form {
   };
 
   doSubmit = async () => {
-    // const apiUrl = process.env.PORT;
+    
     const data = { ...this.state.data };
     data.biz = true;
 
