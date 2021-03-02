@@ -1,5 +1,5 @@
 
-// const apiUrl = process.env.PORT;
-const apiUrl = "http://localhost:5000";
+const apiUrl = process.env.PORT;
+// const apiUrl = "http://localhost:5000";
 
 export default apiUrl;
