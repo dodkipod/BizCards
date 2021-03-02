@@ -26,7 +26,7 @@ class App extends Component {
   callAPI() {
   
     fetch(apiUrl)
-      .then(res => res.json())
+      // .then(res => res.json())
       .then(res => {
         console.log("res: ", res)
         this.setState({response: res});
