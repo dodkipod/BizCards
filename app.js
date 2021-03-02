@@ -24,6 +24,7 @@ app.use(express.json());
 app.use('/undefined/users', users);
 app.use('/undefined/auth', auth);
 app.use('/undefined/cards', cards); 
+app.use('/my-cards/edit/udefined/cards', cards); 
 // app.use('/', test); 
 
 if (process.env.NODE_ENV === 'production') {
