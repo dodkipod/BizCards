@@ -16,11 +16,24 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import userService from "./services/userService";
 import ProtectedRoute from "./components/common/protectedRoute";
+import apiUrl from "../src/apiurl";
 
 class App extends Component {
-  state = {};
+  state = {
+    response:{}
+  };
  
+  callAPI() {
+  
+    fetch(apiUrl)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({response: res});
+      })
+  }
+
   componentDidMount() {
+    this.callAPI();
     const user = userService.getCurrentUser();
     this.setState({ user });
   }
@@ -30,37 +43,41 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <header>
-          <ToastContainer />
-          <Navbar user={user} />
-        </header>
-        <main className="minh-650 main-font">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/signIn" component={SignIn} />
-            <Route path="/logout" component={SignOut} />
-            <Route path="/biz-signup" component={BizSignUp} />
-            <ProtectedRoute
-              path="/favorites"
-              component={Favorites}
-            />
-            <ProtectedRoute
-              path="/create-card"
-              component={CreateCard}
-              biz={true}
-            />
-            <ProtectedRoute
-              path="/my-cards/edit/:id"
-              component={EditCard}
-              biz={true}
-            />
-            <ProtectedRoute path="/my-cards" component={MyCards} biz={true} />
-          </Switch>
-        </main>
-        <footer>
-          <Footer />
-        </footer>
+        {apiUrl!== "http://localhost:5000" && this.state.response}
+        {apiUrl=== "http://localhost:5000" && 
+          <React.Fragment>
+            <header>
+              <ToastContainer />
+              <Navbar user={user} />
+            </header>
+            <main className="minh-650 main-font">
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/signup" component={SignUp} />
+                <Route path="/signIn" component={SignIn} />
+                <Route path="/logout" component={SignOut} />
+                <Route path="/biz-signup" component={BizSignUp} />
+                <ProtectedRoute
+                  path="/favorites"
+                  component={Favorites}
+                />
+                <ProtectedRoute
+                  path="/create-card"
+                  component={CreateCard}
+                  biz={true}
+                />
+                <ProtectedRoute
+                  path="/my-cards/edit/:id"
+                  component={EditCard}
+                  biz={true}
+                />
+                <ProtectedRoute path="/my-cards" component={MyCards} biz={true} />
+              </Switch>
+            </main>
+            <footer>
+              <Footer />
+            </footer>
+          </React.Fragment>}
       </React.Fragment>
     );
   }
