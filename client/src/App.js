@@ -23,19 +23,19 @@ class App extends Component {
     response:{}
   };
  
-  callAPI() {
+  // callAPI() {
   
-    fetch(apiUrl)
-      // .then(res => res.json())
-      .then(res => {
-        console.log("res: ", res)
-        this.setState({response: res});
-      })
-      .catch(err=>console.log(err))
-  }
+  //   fetch(apiUrl)
+  //     // .then(res => res.json())
+  //     .then(res => {
+  //       console.log("res: ", res)
+  //       this.setState({response: res});
+  //     })
+  //     .catch(err=>console.log(err))
+  // }
 
   componentDidMount() {
-    this.callAPI();
+    // this.callAPI();
     const user = userService.getCurrentUser();
     this.setState({ user });
   }
@@ -44,9 +44,9 @@ class App extends Component {
     const { user } = this.state;
 
     return (
-      <React.Fragment>
-        {apiUrl!== "http://localhost:5000" && this.state.response}
-        {apiUrl=== "http://localhost:5000" && 
+      // <React.Fragment>
+      //   {apiUrl!== "http://localhost:5000" && this.state.response}
+      //   {apiUrl=== "http://localhost:5000" && 
           <React.Fragment>
             <header>
               <ToastContainer />
@@ -79,7 +79,7 @@ class App extends Component {
             <footer>
               <Footer />
             </footer>
-          </React.Fragment>}
+          {/* </React.Fragment>} */}
       </React.Fragment>
     );
   }
