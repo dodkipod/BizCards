@@ -44,7 +44,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        {apiUrl!== "http://localhost:5000" && this.state.response}
+        {apiUrl!== "http://localhost:5000" && this.state.response.message}
         {apiUrl=== "http://localhost:5000" && 
           <React.Fragment>
             <header>
