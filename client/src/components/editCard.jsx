@@ -32,7 +32,7 @@ class EditCard extends Form {
     const cardId = this.props.match.params.id;
     const {data}=await cardService.getCard(cardId);
     // hey
-    console.log(data);
+    console.log("data: ",data);
     //----------------
     this.setState({data:this.mapToViewModel(data)});
   }
